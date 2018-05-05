@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>servletlistener</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>company</param-name>
+    <param-value>IBM</param-value>
+  </context-param>
+  <listener>
+    <listener-class>web.CountListener</listener-class>
+  </listener>
+  <servlet>
+    <description></description>
+    <display-name>A</display-name>
+    <servlet-name>A</servlet-name>
+    <servlet-class>web.A</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>A</servlet-name>
+    <url-pattern>/a</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>B</display-name>
+    <servlet-name>B</servlet-name>
+    <servlet-class>web.B</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>B</servlet-name>
+    <url-pattern>/b</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 退出销毁session，在线人数看看 -->
+  <servlet>
+    <description></description>
+    <display-name>LogoutServlet</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>web.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+</web-app>
